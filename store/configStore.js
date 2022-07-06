@@ -9,5 +9,5 @@ export const makeStore = (initialState = exampleInitialState) =>
   configureStore({
     reducer: rootReducer,
     initialState,
-    middleware: composeWithDevTools(applyMiddleware(thunkMiddleware)),
+    //middleware: composeWithDevTools(applyMiddleware(thunkMiddleware)),
   });
