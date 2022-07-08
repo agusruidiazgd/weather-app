@@ -3,19 +3,19 @@ import { setNewTab, setForecast, setSelectedDate } from '../../store/actions';
 import { CITIES } from '../../utils/constants';
 import Calendar from 'react-calendar';
 import { useSelector, useDispatch } from 'react-redux';
-import {getForecastByCity} from '../../services/weather'
+import { getForecastByCity } from '../../services/weather';
 import 'react-calendar/dist/Calendar.css';
 import Tabs from '../Tabs';
 
 export default function Layout({ children }) {
-  const {seletedDate} = useSelector((state) => state.weather)
+  const { seletedDate } = useSelector((state) => state.weather);
   const [date, setDate] = useState(new Date());
   const [tab, setTab] = useState('New York');
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(setNewTab(tab));
-  },[tab])
+  }, [tab]);
 
   useEffect(() => {
     dispatch(setSelectedDate(date));
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
         <Tabs setTab={setTab} tab={tab} tabList={CITIES}>
           {children}
         </Tabs>
-        <Calendar onChange={setDate} value={date} />
+        <Calendar className="mt-6 rounded" onChange={setDate} value={date} />
       </div>
     </div>
   );

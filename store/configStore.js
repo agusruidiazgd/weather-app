@@ -10,4 +10,3 @@ const initStore = () => {
 };
 
 export const wrapper = createWrapper(initStore);
-

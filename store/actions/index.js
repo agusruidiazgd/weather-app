@@ -19,7 +19,7 @@ export const setSelectedCity = (city) => {
   };
 };
 
-export const setForecast = (forecast) =>{
+export const setForecast = (forecast) => {
   return {
     type: actionTypes.SET_FORECAST,
     payload: forecast,
@@ -31,4 +31,4 @@ export const setSelectedDate = (date) => {
     type: actionTypes.SET_SELECTED_DATE,
     payload: date,
   };
-}
+};

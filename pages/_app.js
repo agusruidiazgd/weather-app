@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import {wrapper} from '../store/configStore';
+import { wrapper } from '../store/configStore';
 
 import Layout from '../components/layout';
 

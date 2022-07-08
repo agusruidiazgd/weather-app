@@ -1,4 +1,4 @@
-import { getWeatherIcon } from '../../services/weather'
+import { getWeatherIcon } from '../../services/weather';
 import Image from 'next/image';
 
 export default function WeatherCard({ mini, weatherData }) {
@@ -7,7 +7,7 @@ export default function WeatherCard({ mini, weatherData }) {
     weather: [weather],
     main: temperatureInfo,
     wind,
-    dt
+    dt,
   } = weatherData;
 
   return (
