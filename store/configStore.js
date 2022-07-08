@@ -1,13 +1,13 @@
 import { applyMiddleware } from 'redux';
-import { configureStore } from '@reduxjs/toolkit';
+import { createStore } from 'redux';
+import { createWrapper } from 'next-redux-wrapper';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import thunkMiddleware from 'redux-thunk';
 
-import rootReducer, { exampleInitialState } from './reducers';
+import rootReducer from './reducers';
 
-export const makeStore = (initialState = exampleInitialState) =>
-  configureStore({
-    reducer: rootReducer,
-    initialState,
-    //middleware: composeWithDevTools(applyMiddleware(thunkMiddleware)),
-  });
+const initStore = () => {
+  return createStore(rootReducer, composeWithDevTools(applyMiddleware()));
+};
+
+export const wrapper = createWrapper(initStore);
+
