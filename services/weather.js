@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiKey = 'e5e2ab54cb1b8ea725a2d58b6beca2ec';
+let apiKey = process.env.weatherKey;
 
 const baseUrl = (query, cityName) =>
   `https://api.openweathermap.org/data/2.5/${query}?q=${cityName}&appid=${apiKey}&units=metric`;
